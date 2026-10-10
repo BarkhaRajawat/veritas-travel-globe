@@ -115,87 +115,213 @@ export default function LandingOverlay() {
 
   return (
     <>
+
+       
       {/* ══ LHS ══ */}
-      <div className="overlay-lhs" style={{
-        position:'fixed', left:28, top:64, bottom:70,
-        width:325, zIndex:5,
-        pointerEvents:'none', userSelect:'none',
-        display:'flex', flexDirection:'column',
-        gap:0,
-        paddingTop:9,
-      }}>
-        <p style={{ ...blueLabel, marginBottom:12 }}>Explore the World</p>
-
-        <h1 style={{
-          margin:'0 0 13px',
-          fontSize:32, fontWeight:800, lineHeight:1.20,
-          color:'#ffffff',
-          fontFamily:'system-ui,sans-serif',
-          textShadow:'0 2px 20px rgba(0,0,0,0.90)',
-          whiteSpace:'nowrap',
-        }}>
-          Click the world,<br/>
-          discover your<br/>
-          next{' '}
-          <span style={{
-            fontStyle:'italic',
-            background:'linear-gradient(90deg,#4ea8ff,#a78bfa)',
-            WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent',
-          }}>story.</span>
-        </h1>
-
-        <p style={{
-          margin:'0 0 19px',
-          fontSize:14, lineHeight:1.65,
-          color:'rgba(255,255,255,0.78)',
-          fontFamily:'system-ui,sans-serif',
-          textShadow:'0 1px 10px rgba(0,0,0,0.80)',
-        }}>
-          Tap any country on the globe to discover the best time to visit, travel insights, and unforgettable experiences.
+      <div
+        className="overlay-lhs"
+        style={{
+          position: 'fixed',
+          left: 28,
+          top: 64,
+          bottom: 70,
+          width: 325,
+          zIndex: 5,
+          pointerEvents: 'none',
+          userSelect: 'none',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 0,
+          paddingTop: 9,
+        }}
+      >
+        <p style={{ ...blueLabel, marginBottom: 12 }}>
+          Explore the World
         </p>
 
-        <p style={{ ...sectionLabel, marginBottom:9 }}>What Will You Find?</p>
-        <div style={{ display:'flex', flexDirection:'column', gap:8, marginBottom:19 }}>
-          {CATEGORIES.map(c => (
-            <div key={c.label} style={{ display:'flex', alignItems:'center', gap:10 }}>
-              <span style={{
-                width:27, height:27, borderRadius:'50%',
-                background:`${c.color}22`,
-                border:`1.5px solid ${c.color}55`,
-                display:'flex', alignItems:'center', justifyContent:'center',
-                fontSize:13, flexShrink:0,
-                boxShadow:`0 0 8px ${c.color}22`,
-              }}>{c.icon}</span>
-              <span style={{
-                fontSize:15, fontWeight:600,
-                color: c.color,
-                fontFamily:'system-ui,sans-serif',
-                textShadow:`0 0 12px ${c.color}44, 0 1px 8px rgba(0,0,0,0.70)`,
-              }}>{c.label}</span>
-            </div>
-          ))}
-        </div>
+        <h1
+          style={{
+            margin: '0 0 13px',
+            fontSize: 32,
+            fontWeight: 800,
+            lineHeight: 1.2,
+            color: '#ffffff',
+            fontFamily: 'system-ui, sans-serif',
+            textShadow: '0 2px 20px rgba(0,0,0,0.90)',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          Click the world,
+          <br />
+          discover your
+          <br />
+          next{' '}
+          <span
+            style={{
+              fontStyle: 'italic',
+              background: 'linear-gradient(90deg,#4ea8ff,#a78bfa)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
+            story.
+          </span>
+        </h1>
 
-        <p style={{ ...sectionLabel, marginBottom:9 }}>How to Explore</p>
-        <div style={{ display:'flex', flexDirection:'column', gap:8 }}>
-          {HOW_TO.map(tip => (
-            <div key={tip.label} style={{ display:'flex', alignItems:'center', gap:10 }}>
-              <span style={{
-                width:25, height:25, borderRadius:'50%',
-                background:`${tip.color}20`,
-                border:`1.5px solid ${tip.color}55`,
-                display:'flex', alignItems:'center', justifyContent:'center',
-                fontSize:11, color:tip.color, flexShrink:0,
-                boxShadow:`0 0 8px ${tip.color}22`,
-                fontFamily:'system-ui,sans-serif',
-              }}>{tip.icon}</span>
-              <span style={{ fontSize:14, fontFamily:'system-ui,sans-serif', textShadow:'0 1px 8px rgba(0,0,0,0.80)' }}>
-                <strong style={{ color:'#fff', fontWeight:700 }}>{tip.label}</strong>
-                <span style={{ color:'rgba(255,255,255,0.58)' }}> — {tip.desc}</span>
+        <p
+          style={{
+            margin: '0 0 19px',
+            fontSize: 14,
+            lineHeight: 1.65,
+            color: 'rgba(255,255,255,0.78)',
+            fontFamily: 'system-ui, sans-serif',
+            textShadow: '0 1px 10px rgba(0,0,0,0.80)',
+          }}
+        >
+          Tap any country on the globe to discover the best time to visit,
+          travel insights, and unforgettable experiences.
+        </p>
+
+        <p style={{ ...sectionLabel, marginBottom: 9 }}>
+          What Will You Find?
+        </p>
+
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 8,
+            marginBottom: 19,
+          }}
+        >
+          {CATEGORIES.map((c) => (
+            <div
+              key={c.label}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 10,
+              }}
+            >
+              <span
+                style={{
+                  width: 27,
+                  height: 27,
+                  borderRadius: '50%',
+                  background: `${c.color}22`,
+                  border: `1.5px solid ${c.color}55`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 13,
+                  flexShrink: 0,
+                  boxShadow: `0 0 8px ${c.color}22`,
+                }}
+              >
+                {c.icon}
+              </span>
+
+              <span
+                style={{
+                  fontSize: 15,
+                  fontWeight: 600,
+                  color: c.color,
+                  fontFamily: 'system-ui, sans-serif',
+                  textShadow: `0 0 12px ${c.color}44, 0 1px 8px rgba(0,0,0,0.70)`,
+                }}
+              >
+                {c.label}
               </span>
             </div>
           ))}
         </div>
+
+        <p style={{ ...sectionLabel, marginBottom: 9 }}>
+          How to Explore
+        </p>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          {HOW_TO.map((tip) => (
+            <div
+              key={tip.label}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 10,
+              }}
+            >
+              <span
+                style={{
+                  width: 25,
+                  height: 25,
+                  borderRadius: '50%',
+                  background: `${tip.color}20`,
+                  border: `1.5px solid ${tip.color}55`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 11,
+                  color: tip.color,
+                  flexShrink: 0,
+                  boxShadow: `0 0 8px ${tip.color}22`,
+                  fontFamily: 'system-ui, sans-serif',
+                }}
+              >
+                {tip.icon}
+              </span>
+
+              <span
+                style={{
+                  fontSize: 14,
+                  fontFamily: 'system-ui, sans-serif',
+                  textShadow: '0 1px 8px rgba(0,0,0,0.80)',
+                }}
+              >
+                <strong style={{ color: '#fff', fontWeight: 700 }}>
+                  {tip.label}
+                </strong>
+                <span style={{ color: 'rgba(255,255,255,0.58)' }}>
+                  {' '}— {tip.desc}
+                </span>
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Trip Budget Calculator shortcut */}
+        <button
+          type="button"
+          onClick={() => {
+            document
+              .getElementById('trip-budget-calculator')
+              ?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+              });
+          }}
+          style={{
+            pointerEvents: 'auto',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 10,
+            marginTop: 18,
+            padding: '11px 14px',
+            width: 'fit-content',
+            maxWidth: '100%',
+            borderRadius: 12,
+            border: '1px solid rgba(0,212,170,0.35)',
+            background: 'rgba(0,212,170,0.10)',
+            color: '#00d4aa',
+            fontSize: 14,
+            fontWeight: 700,
+            fontFamily: 'system-ui, sans-serif',
+            cursor: 'pointer',
+          }}
+        >
+          <span style={{ fontSize: 19 }}>🧮</span>
+          <span>Trip Budget Calculator</span>
+          <span style={{ fontSize: 17 }}>↓</span>
+        </button>
       </div>
 
       {/* ══ RHS ══ */}
