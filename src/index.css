@@ -1,4 +1,4 @@
-@tailwind base;
+ /* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -20,10 +20,69 @@ body,
 }
 
 /* Hide scrollbars on overlay panels while keeping scroll functionality */
+/*.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}  */
+
+
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Keep element sizing consistent */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Allow the entire page to scroll vertically */
+html {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #000;
+  scroll-behavior: smooth;
+}
+
+/* Let the page grow beyond the screen height */
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #000;
+  color: #fff;
+}
+
+/* Allow React content to extend below the viewport */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background: #000;
+}
+
+/* Hide scrollbars on overlay panels while preserving scrolling */
 .no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
